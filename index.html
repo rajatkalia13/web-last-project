@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Login/ Sign Up Project</title>
+      <link rel="stylesheet" href="style.css">
+
+   </head>
+   <body>
+      <div class="page_design">
+         <div class="title-text">
+            <div class="title login">
+               Login
+            </div>
+            <div class="title signup">
+               Signup
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form  action="Guestuser.html" class="login">
+                  <div class="field">
+                     <input name="name" type="text" placeholder="Name" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required>
+                  </div>
+
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="">Signup now</a>
+                  </div>
+                  <div class="signup-link">
+                     Or
+                  </div>
+                  <div class="signup-link">
+                     Other Member's profile
+                  </div>
+
+                  <div class="signup-link">
+                  <a href="yuvraj_profile.html">Yuvraj's Profile </a>
+
+                  </div>
+                  <div class="signup-link">
+                  <a href="rajat_profile.html">Rajat's Profile </a>
+
+                  </div>
+
+
+
+               </form>
+
+
+
+
+
+
+               <form action="Guestuser.html" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Name" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const name_Text = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+
+           var x = document.getElementsByName("name").value;
+           if(x === "yuvraj"){
+             window.location.replace="yuvraj_profile.html";
+            }else {
+              window.location.replace="Guestuser.html";
+
+            }
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+
+
+         function toRedirect(){
+             // get the user input
+             var user_value = document.getElementById('name').value ;
+             // check the validation
+             if(user_value!=''){
+                 // redirect
+                location.href='yuvraj_profile.html';
+             }else{
+                 // alert error message
+                 alert("validation error");
+             }
+         }
+      </script>
+   </body>
+</html>
